@@ -1,0 +1,62 @@
+\documentclass[12pt]{article}
+\setlength{\oddsidemargin}{0in}
+\setlength{\evensidemargin}{0in}
+\setlength{\textwidth}{6.5in}
+\setlength{\parindent}{0in}
+\setlength{\parskip}{\baselineskip}
+
+\usepackage{xcolor}
+\usepackage{amsmath,amsfonts,amssymb}
+\usepackage{qtree}
+\usepackage{enumerate}
+\usepackage{multirow}
+\usepackage{graphicx}
+\usepackage{forest}
+
+
+\begin{document}
+
+CSCI 4448 Spring 2016 \hfill Project Write-up 2\\
+
+\hrulefill
+%%%%%%%%%%%%%%%%%%%%%%%%% SECTION 1  %%%%%%%%%%%%%%%%%%%%%%%%%
+\begin{center}
+  \textbf{Business Requirements} \\
+\begin{tabular}{| l | l | l | l | l | }
+  \hline
+  \textbf{ID}  & \textbf{Requirement} & \textbf{Topic Area} & \textbf{Actor} & \textbf{Priority} \\ \hline
+  BR-001 & Ingredients must be able to include sponsor links & Advertising & All & Medium \\ \hline 
+  BR-002 & Collect user data for later processing & Reporting & Admin & Medium \\ \hline
+  BR-003 & Replication factor of 3 for data consistency & Database & Admin & High \\ \hline
+  BR-004 & Able to remove ingredients after search & Functionality & User & Medium \\ \hline
+
+\end{tabular}
+\\
+  \vspace{1cm}
+ \textbf{User Requirements} \\
+\begin{tabular}{| l | l | l | l | l | }
+  \hline
+  \textbf{ID}  & \textbf{Requirement} & \textbf{Topic Area} & \textbf{Actor} & \textbf{Priority} \\ \hline
+  UR-001 & Can enter optimal price range per meal & Interface & User & Medium \\ \hline 
+  UR-002 & Dietary Restrictions Option  & Interface & User & Medium \\ \hline
+  UR-003 & If no matches find next closest & Functionality & User & Low \\ \hline
+  UR-004 & Search Bar for ingredinet list & Interface & User & High \\ \hline
+\end{tabular}
+\\
+  \vspace{1cm}
+  \textbf{Non-Functional Requirements}
+\begin{tabular}{| l | l | l | l | l | }
+  \hline
+  \textbf{ID}  & \textbf{Requirement} & \textbf{Topic Area} & \textbf{Actor} & \textbf{Priority} \\ \hline
+  UR-001 & Show 10 recipes upon search  &  Interface & User & Low  \\ \hline 
+  UR-002 & Return at least 3 hits in under one second & Media & User &  Medium\\ \hline
+  UR-003 & Less than one second load time for inital website &  Website & All & High \\ \hline
+  UR-004 & Recent database results cached locally & Database & User & Low \\ \hline
+\end{tabular}
+\end{center}
+\newpage
+\begin{center}
+\textbf{Use Cases}
+\end{center}
+
+\end{document}
