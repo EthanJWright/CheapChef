@@ -6,15 +6,18 @@ Classes:
         - Get Catagories
       - Type Ingredient Name
         - Get Ingredient
-
-  - 
+    - Select Generate Recipes
+      - Get Filter
+      - Get Recipes
 
   - Get Ingredient
     - Validate Ingredient
     - Call Add Ingredient List if Valid
-  - Filter Ingredients (mapReduce)
-    - 
+  - Create Filter Ingredients (mapReduce)
+  - Get Filter
+
   - Add Ingredient List
   - Remove Ingredient List
   - Display Recipes
+
 
