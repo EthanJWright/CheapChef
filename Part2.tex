@@ -54,9 +54,25 @@ CSCI 4448 Spring 2016 \hfill Project Write-up 2\\
   UR-004 & Recent database results cached locally & Database & User & Low \\ \hline
 \end{tabular}
 \end{center}
+\begin{center}
+\begin{figure}
+\includegraphics[width=\linewidth]{UseCase.png}
+\caption{Use Case.}
+\label{fig:UseCase}
+\end{figure}
+\end{center}
 \newpage
 \begin{center}
-\textbf{Use Cases}
+  \textbf{Data Storage}
 \end{center}
+\textit{Database: } We will be using Cassandra DB so that we can easily delegate multi-factor replication and partition management. We will be hosting our database using
+Amazon S3 which easily integrates a Cassandra deployment. \\
+\vspace{1cm} \\
+\textit{Data Persistance: } We will have a static list of recipe names with ingredients lists which will persist. We will query the database and MapReduce based on the ingredients
+provided by the user to provide a list of the 10 best matches.
 
+\newpage
+\begin{center}
+  \textbf{Class Diagram}
+\end{center}
 \end{document}

@@ -1,0 +1,20 @@
+Classes:
+  - Display User Selection
+    - User Input Variable
+    - Case match: 
+      - Select from Category
+        - Get Catagories
+      - Type Ingredient Name
+        - Get Ingredient
+
+  - 
+
+  - Get Ingredient
+    - Validate Ingredient
+    - Call Add Ingredient List if Valid
+  - Filter Ingredients (mapReduce)
+    - 
+  - Add Ingredient List
+  - Remove Ingredient List
+  - Display Recipes
+
