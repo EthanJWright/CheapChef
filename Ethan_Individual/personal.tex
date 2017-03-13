@@ -1,0 +1,88 @@
+\documentclass[12pt]{article}
+\setlength{\oddsidemargin}{0in}
+\setlength{\evensidemargin}{0in}
+\setlength{\textwidth}{6.5in}
+\setlength{\parindent}{0in}
+\setlength{\parskip}{\baselineskip}
+
+\usepackage{colortbl}
+\usepackage{xcolor}
+\usepackage{amsmath,amsfonts,amssymb}
+\usepackage{qtree}
+\usepackage{enumerate}
+\usepackage{multirow}
+\usepackage{graphicx}
+\usepackage{forest}
+\usepackage{tabularx}
+
+
+
+\begin{document}
+CSCI 4448 Spring 2016 \hfill Project Write-up 2\\
+\textbf{Project: } Cheap Chef \\
+\textbf{Name: } Ethan Wright \\
+
+
+\hrulefill
+%%%%%%%%%%%%%%%%%%%%%%%%% SECTION 1  %%%%%%%%%%%%%%%%%%%%%%%%%
+\begin{center}
+  \textbf{Use Case Document}
+  \begin{tabular}{l  l}
+    \textbf{User ID} & \textbf{Requirement} \\ \hline \rowcolor[gray]{.95}
+    UR-001 & The user can select an ingredient from a category \\ 
+    UR-002 & The user can select an ingredient from a search function \\ \rowcolor[gray]{.95}
+    UR-003 & The user can filter options based on dietary preference \\ 
+    UR-004 & The user can filter options based on price of ingredients \\ \rowcolor[gray]{.95}
+    UR-005 & The user can makr a dietary preference as mandatory or prefered \\
+    UR-006 & The user can delete ingredients from their list \\ \rowcolor[gray]{.95}
+    UR-007 & The user can generate recipes based on current ingredient selection \\ 
+  \end{tabular}
+\end{center}
+\newpage
+\begin{center}
+  \textbf{Use Cases}
+\end{center}
+  \begin{tabular}{ l | l }
+    \hline
+    \textbf{Use Cases} & UR-001 \\ \rowcolor[gray]{.95}
+    \textbf{Use Case Name} & As a user, I can choose an ingredient from a category \\ 
+    \textbf{Description} & User has option to display categories of ingredients \\ \rowcolor[gray]{.95}
+    \textbf{Actors} & User \\
+    \textbf{Pre-conditions} & None \\ \rowcolor[gray]{.95}
+    \textbf{Post-conditions} & Ingredients in category displayed to user \\ 
+    \textbf{Frequency of Use} & When ever user wants to choose ingredient but not search for it \\ \rowcolor[gray]{.95}
+    \textbf{Flow of Events} & 1. User clicks on categories   2. User selects ingredient \\
+    \textbf{Variations} & User does not select ingredient \\  \rowcolor[gray]{.95}
+    \textbf{Exceptions} & If too many ingredients exist it shouldn't allow an addition \\
+    \textbf{Developer Notes} &  \\ \hline
+  \end{tabular}
+
+
+  \begin{tabular}{ l | l }
+    \hline
+    \textbf{Test } & UR-002 \\ \rowcolor[gray]{.95}
+    \textbf{Use Case Name} & As A user, I can search for an ingrediente to add  \\ 
+    \textbf{Description} & User can enter text into search bar to display results \\ \rowcolor[gray]{.95}
+    \textbf{Actors} & User \\
+    \textbf{Pre-conditions} & None \\ \rowcolor[gray]{.95}
+    \textbf{Post-conditions} & User has list of ingredients to select from \\ 
+    \textbf{Frequency of Use} & When the user wants to choose an ingredient but not just use a category \\ \rowcolor[gray]{.95}
+    \textbf{Flow of Events} & 1. User enters search terms 2. User selects ingredient \\
+    \textbf{Variations} & No matching ingredients are found \\  \rowcolor[gray]{.95}
+    \textbf{Exceptions} & If no ingredient is found it should recommend a similar ingredient \\
+    \textbf{Developer Notes} &  \\ \hline
+  \end{tabular}
+ 
+ \newpage
+ \begin{figure}
+   \includegraphics[width=\linewidth]{UR-001.png}
+   \caption{UR-001}
+   \label{fig:UR-001}
+ \end{figure}
+ \newpage
+ \begin{figure}
+   \includegraphics[width=\linewidth]{UR-002.png}
+   \caption{UR-002}
+   \label{fig:UR-002}
+ \end{figure}
+\end{document}
