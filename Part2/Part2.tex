@@ -55,22 +55,10 @@ CSCI 4448 Spring 2016 \hfill Project Write-up 2\\
   NFR-003 & Less than one second load time for inital website &  Website & All & High \\ 
   NFR-004 & Recent database results cached locally & Database & User & Low \\  \rowcolor[gray]{.95}
   NFR-005 & Set partition size for Database & Database & Admin & Low \\ 
-
 \end{tabular}
 \end{center}
-\begin{center}
-  \textbf{Use Case Document}
-  \begin{tabular}{ l | l }
-    \textbf{User ID} & \textbf{Requirement} \\ \hline \rowcolor[gray]{.95}
-    UR-001 & The user can select an ingredient from a category \\ 
-    UR-002 & The user can select an ingredient from a search function \\ \rowcolor[gray]{.95}
-    UR-003 & The user can filter options based on dietary preference \\ 
-    UR-004 & The user can filter options based on price of ingredients \\ \rowcolor[gray]{.95}
-    UR-005 & The user can makr a dietary preference as mandatory or prefered \\
-    UR-006 & The user can delete ingredients from their list \\ \rowcolor[gray]{.95}
-    UR-007 & The user can generate recipes based on current ingredient selection \\ 
-  \end{tabular}
-\end{center}
+
+\newpage
 \textit{Database: } We will be using Cassandra DB so that we can easily delegate multi-factor replication and partition management. We will be hosting our database using
 Amazon S3 which easily integrates a Cassandra deployment. \\
 \vspace{1cm} \\
