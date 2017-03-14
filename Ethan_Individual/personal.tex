@@ -41,6 +41,12 @@ CSCI 4448 Spring 2016 \hfill Project Write-up 2\\
 \begin{center}
   \textbf{Use Cases}
 \end{center}
+\textbf{Requirements: } \\
+\textbf{UR-001: } As a user I want to be able to select my ingredient out of a category \\
+\textbf{UR-002: } As a user I want to be able to search for my ingredient \\ 
+\vspace{1cm}
+
+\textbf{Use Case Documents:} \\
   \begin{tabular}{ l | l }
     \hline
     \textbf{Use Cases} & UR-001 \\ \rowcolor[gray]{.95}
@@ -54,7 +60,7 @@ CSCI 4448 Spring 2016 \hfill Project Write-up 2\\
     all ingredients matching category} \\ 
     \textbf{Variations} & User does not select ingredient \\  \rowcolor[gray]{.95}
     \textbf{Exceptions} & If too many ingredients exist it shouldn't allow an addition \\
-    \textbf{Developer Notes} &  \\ \hline
+    \textbf{Developer Notes} & Depicted in Figure \ref{fig:UR-001} \\ \hline
   \end{tabular}
 
 
@@ -71,7 +77,7 @@ CSCI 4448 Spring 2016 \hfill Project Write-up 2\\
     \textbf{System Repsonse:} Return a list of all matching ingredients }  \\
     \textbf{Variations} & No matching ingredients are found \\  \rowcolor[gray]{.95}
     \textbf{Exceptions} & If no ingredient is found it should recommend a similar ingredient \\
-    \textbf{Developer Notes} &  \\ \hline
+    \textbf{Developer Notes} &  Depicted in Figure \ref{fig:UR-002}\\ \hline
   \end{tabular}
  
  \newpage
@@ -86,4 +92,16 @@ CSCI 4448 Spring 2016 \hfill Project Write-up 2\\
    \caption{UR-002}
    \label{fig:UR-002}
  \end{figure}
+ \newpage
+
+\begin{figure}
+  \includegraphics[width=\linewidth]{activity.png}
+  \caption{Activity Diagram}
+  \label{fig:activity}
+\end{figure}
+ \begin{center}
+   \textbf{Activity Diagram: UR-001 and UR-002} \\
+   \textit{Use Case: } "Add Ingredient" \\
+   \textit{Description: } Activity diagram corresponding to a user adding an ingredient \\
+ \end{center}
 \end{document}
