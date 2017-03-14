@@ -14,8 +14,7 @@
 \usepackage{graphicx}
 \usepackage{forest}
 \usepackage{tabularx}
-
-
+\usepackage{pbox}
 
 \begin{document}
 CSCI 4448 Spring 2016 \hfill Project Write-up 2\\
@@ -29,7 +28,7 @@ CSCI 4448 Spring 2016 \hfill Project Write-up 2\\
   \textbf{Use Case Document}
   \begin{tabular}{l  l}
     \textbf{User ID} & \textbf{Requirement} \\ \hline \rowcolor[gray]{.95}
-    UR-001 & The user can select an ingredient from a category \\ 
+    UR-001 & The user can select an ingredient from a category \\
     UR-002 & The user can select an ingredient from a search function \\ \rowcolor[gray]{.95}
     UR-003 & The user can filter options based on dietary preference \\ 
     UR-004 & The user can filter options based on price of ingredients \\ \rowcolor[gray]{.95}
@@ -51,7 +50,8 @@ CSCI 4448 Spring 2016 \hfill Project Write-up 2\\
     \textbf{Pre-conditions} & None \\ \rowcolor[gray]{.95}
     \textbf{Post-conditions} & Ingredients in category displayed to user \\ 
     \textbf{Frequency of Use} & When ever user wants to choose ingredient but not search for it \\ \rowcolor[gray]{.95}
-    \textbf{Flow of Events} & 1. User clicks on categories   2. User selects ingredient \\
+    \textbf{Flow of Events} & \pbox{20cm}{\textbf{Actor Action: } Click on desired category\\ \textbf{System Response:} Return
+    all ingredients matching category} \\ 
     \textbf{Variations} & User does not select ingredient \\  \rowcolor[gray]{.95}
     \textbf{Exceptions} & If too many ingredients exist it shouldn't allow an addition \\
     \textbf{Developer Notes} &  \\ \hline
@@ -60,14 +60,15 @@ CSCI 4448 Spring 2016 \hfill Project Write-up 2\\
 
   \begin{tabular}{ l | l }
     \hline
-    \textbf{Test } & UR-002 \\ \rowcolor[gray]{.95}
+    \textbf{Use Cases} & UR-002 \\ \rowcolor[gray]{.95}
     \textbf{Use Case Name} & As A user, I can search for an ingrediente to add  \\ 
     \textbf{Description} & User can enter text into search bar to display results \\ \rowcolor[gray]{.95}
     \textbf{Actors} & User \\
     \textbf{Pre-conditions} & None \\ \rowcolor[gray]{.95}
     \textbf{Post-conditions} & User has list of ingredients to select from \\ 
     \textbf{Frequency of Use} & When the user wants to choose an ingredient but not just use a category \\ \rowcolor[gray]{.95}
-    \textbf{Flow of Events} & 1. User enters search terms 2. User selects ingredient \\
+    \textbf{Flow of Events} & \pbox{20cm}{\textbf{Actor Action: }Enter an ingredient into the search bar \\
+    \textbf{System Repsonse:} Return a list of all matching ingredients }  \\
     \textbf{Variations} & No matching ingredients are found \\  \rowcolor[gray]{.95}
     \textbf{Exceptions} & If no ingredient is found it should recommend a similar ingredient \\
     \textbf{Developer Notes} &  \\ \hline
