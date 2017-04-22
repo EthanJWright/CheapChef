@@ -13,17 +13,20 @@ public class controller {
         user.databaseIngredients.addIngredient(userIngredient);
         
         user.setDatabaseIngredients();
-        
+        while(true){
         System.out.println("Enter your item: ");
         scanner = new Scanner(System.in);
         String item = scanner.nextLine();
-
-        ingredient match = user.query.findIngredient("carrot", user);
         
         ingredient user_input = user.query.findIngredient(item, user);
-        System.out.println(match.getIngredient());
 
+        if(user_input == null){
+        	System.out.println("Ingredient not in system");
+        }
+        else{
         System.out.println(user_input.getIngredient());
+        }
+        }
         
         
         
