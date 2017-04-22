@@ -6,10 +6,17 @@ public class controller {
 
         ingredient userIngredient = new ingredient();
         userIngredient.setIngredient("carrot");
-        
         user.databaseIngredients.addIngredient(userIngredient);
+        
+        user.setDatabaseIngredients();
+        
+
         ingredient match = user.query.findIngredient("carrot", user);
+        ingredient check = user.query.findIngredient("broth", user);
         System.out.println(match.getIngredient());
+        System.out.println(check.getIngredient());
+        
+        
         
  /*     
         
