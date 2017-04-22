@@ -25,7 +25,12 @@ public class ingredients {
 	
 	public void addIngredient(ingredient adding){
 		// add an ingredient to the list
-		ingredients.add(adding);
+		if(adding.DietaryNeed == true){
+			restricted.add(adding);
+		}
+		else{
+			ingredients.add(adding);
+		}
 	}
 	
 	public ingredient findIngredient(String searching){

@@ -31,12 +31,13 @@ public class controller {
         ArrayList<ingredient> userIngredients = user.userIngredients.getIngredients();
         
 		for (Iterator<ingredient> iter = userIngredients.listIterator(); iter.hasNext(); ) {
+			
 		    ingredient a = iter.next();
 		    System.out.println(a.getIngredient());
 		}
        
         }
-        }
+     }
         
         
         
