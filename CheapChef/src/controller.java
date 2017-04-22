@@ -1,3 +1,5 @@
+import java.util.ArrayList;
+import java.util.Iterator;
 import java.util.Scanner;
 
 public class controller {
@@ -24,7 +26,15 @@ public class controller {
         	System.out.println("Ingredient not in system");
         }
         else{
-        System.out.println(user_input.getIngredient());
+        user.userIngredients.addIngredient(user_input);
+        System.out.println("Your ingredients are: ");
+        ArrayList<ingredient> userIngredients = user.userIngredients.getIngredients();
+        
+		for (Iterator<ingredient> iter = userIngredients.listIterator(); iter.hasNext(); ) {
+		    ingredient a = iter.next();
+		    System.out.println(a.getIngredient());
+		}
+       
         }
         }
         

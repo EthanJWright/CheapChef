@@ -2,7 +2,7 @@
 public class ingredient {
 	public int price;
 	public String ingredient;
-	public boolean match;
+	public boolean DietaryNeed;
 	
 	
 	public int getPrice() {
@@ -17,11 +17,11 @@ public class ingredient {
 	public void setIngredient(String ingredient) {
 		this.ingredient = ingredient;
 	}
-	public boolean isMatch() {
-		return match;
+	public boolean isDietaryNeed() {
+		return DietaryNeed;
 	}
-	public void setMatch(boolean match) {
-		this.match = match;
+	public void setDietaryNeed(boolean match) {
+		this.DietaryNeed = match;
 	}
 	
 
