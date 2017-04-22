@@ -6,7 +6,8 @@ public class controller {
         testIngredient.setIngredient("carrot");
         ingredientList.addIngredient(testIngredient);
         ingredientList.addIngredient(testIngredient);
-        System.out.println(ingredientList);
+        ingredient carrot = ingredientList.getIngredients().get(0);
+        System.out.println(carrot.getIngredient());
         
     }
 

@@ -17,11 +17,8 @@ public class ingredients {
 		return ingredients;
 	}
 	
-	public ArrayList<ingredient> addIngredient(ingredient adding){
-		int listSize = ingredients.size();
-		for(int i = 0; i < listSize; ++i)
-		  ingredients.add(adding);
-		return ingredients;
+	public void addIngredient(ingredient adding){
+		ingredients.add(adding);
 	}
 	
 	public ArrayList<ingredient> getIngredients() {
