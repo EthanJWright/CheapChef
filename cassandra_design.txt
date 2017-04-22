@@ -1,0 +1,12 @@
+   CREATE TABLE ingredients(
+    ingredient int PRIMARY KEY,
+    ingredient_name text,
+    ingredient_price int,
+    ingredient_restricted boolean,
+    );
+
+CREATE TABLE recipes(
+  recipe int PRIMARY KEY,
+  recipe_name text,
+  recipe_price int,
+  );
