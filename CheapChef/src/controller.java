@@ -1,6 +1,18 @@
 public class controller {
     public static void main(String[] args) {
         System.out.println("Hello World!"); // Display the string.
+        Model user = new Model();
+        
+
+        ingredient userIngredient = new ingredient();
+        userIngredient.setIngredient("carrot");
+        
+        user.databaseIngredients.addIngredient(userIngredient);
+        ingredient match = user.query.findIngredient("carrot", user);
+        System.out.println(match.getIngredient());
+        
+ /*     
+        
         ingredients ingredientList = new ingredients();
         
         // Make some ingredients to add
@@ -28,6 +40,11 @@ public class controller {
         ingredient mysteryItem = ingredientList.getIngredients().get(0);
         System.out.println(mysteryItem.getIngredient());
         
+        ingredient finding = query.findIngredient("potato");
+        
+        System.out.println(finding.getIngredient());
+        
+  */      
     }
 
 }
