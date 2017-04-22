@@ -32,7 +32,7 @@ public class ingredients {
 	    ArrayList<ingredient> list = ingredients;
 		for (Iterator<ingredient> iter = list.listIterator(); iter.hasNext(); ) {
 		    ingredient a = iter.next();
-		    if (a.ingredient == searching) {
+		    if (a.ingredient.equals(searching)) {
 		        return a;
 		    
 		    }		
