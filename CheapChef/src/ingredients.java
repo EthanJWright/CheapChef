@@ -25,10 +25,13 @@ public class ingredients {
 	
 	public void addIngredient(ingredient adding){
 		// add an ingredient to the list
+		
+		// if it is a dietary need add to restricted list
 		if(adding.DietaryNeed == true){
 			restricted.add(adding);
 		}
 		else{
+			// otherwise add to user list
 			ingredients.add(adding);
 		}
 	}
