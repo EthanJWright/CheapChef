@@ -7,6 +7,7 @@ public class ingredients {
 	ArrayList<ingredient> restricted = new ArrayList<ingredient>();
 	
 	public ArrayList<ingredient> removeIngredient(ingredient removing){
+		// remove the specified ingredient from the list (need ingredient object)
 		ArrayList<ingredient> list = ingredients;
 		for (Iterator<ingredient> iter = list.listIterator(); iter.hasNext(); ) {
 		    ingredient a = iter.next();
@@ -18,6 +19,7 @@ public class ingredients {
 	}
 	
 	public void addIngredient(ingredient adding){
+		// add an ingredient to the list
 		ingredients.add(adding);
 	}
 	
