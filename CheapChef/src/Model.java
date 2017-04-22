@@ -1,8 +1,8 @@
-import java.util.ArrayList;
-
 public class Model {
-	ArrayList<ingredient> ingredients = new ArrayList<ingredient>();
-	ArrayList<ingredient> restricted = new ArrayList<ingredient>();
+	SearchTemplate query = new SearchTemplate();
+	ingredients userIngredients = new ingredients();
+	ingredients databaseIngredients = new ingredients();
+	ingredients restricted = new ingredients();
 	int priceRange;
 	
 }

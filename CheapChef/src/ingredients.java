@@ -28,6 +28,18 @@ public class ingredients {
 		ingredients.add(adding);
 	}
 	
+	public ingredient findIngredient(String searching){
+	    ArrayList<ingredient> list = ingredients;
+		for (Iterator<ingredient> iter = list.listIterator(); iter.hasNext(); ) {
+		    ingredient a = iter.next();
+		    if (a.ingredient == searching) {
+		        return a;
+		    
+		    }		
+	   	}
+		return null;
+	}
+	
 	public ArrayList<ingredient> getIngredients() {
 		return ingredients;
 	}
