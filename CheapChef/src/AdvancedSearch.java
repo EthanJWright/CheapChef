@@ -13,4 +13,12 @@ public class AdvancedSearch {
 		return match;
 	}
 
+	public boolean isDietaryNeed() {
+		return DietaryNeed;
+	}
+
+	public void setDietaryNeed(boolean dietaryNeed) {
+		DietaryNeed = dietaryNeed;
+	}
+
 }
