@@ -23,6 +23,11 @@ public class controller {
         System.out.println(carrot.getIngredient());
         System.out.println(potato.getIngredient());
         
+        ingredientList.removeIngredient(carrot);
+        
+        ingredient mysteryItem = ingredientList.getIngredients().get(0);
+        System.out.println(mysteryItem.getIngredient());
+        
     }
 
 }

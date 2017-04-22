@@ -8,7 +8,12 @@ public class ingredients {
 	
 	public ArrayList<ingredient> removeIngredient(ingredient removing){
 		// remove the specified ingredient from the list (need ingredient object)
+		
 		ArrayList<ingredient> list = ingredients;
+		if(list.isEmpty()){
+			return null;
+		}
+		
 		for (Iterator<ingredient> iter = list.listIterator(); iter.hasNext(); ) {
 		    ingredient a = iter.next();
 		    if (a == removing) {
