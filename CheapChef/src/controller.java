@@ -9,6 +9,7 @@ public class controller {
         System.out.println("Hello World!"); // Display the string.
         Model user = new Model();
         
+        
 
         ingredient userIngredient = new ingredient();
         userIngredient.setIngredient("carrot");
@@ -18,7 +19,11 @@ public class controller {
         while(true){
         System.out.println("Enter your item: ");
         scanner = new Scanner(System.in);
-        String item = scanner.nextLine();
+        String item = scanner.nextLine().toLowerCase();
+        
+        System.out.println("Is it an allergy?(Y/N): ");
+        scanner = new Scanner(System.in);
+        String restrict = scanner.nextLine().toLowerCase();
         
         ingredient user_input = user.query.findIngredient(item, user);
 
@@ -26,55 +31,33 @@ public class controller {
         	System.out.println("Ingredient not in system");
         }
         else{
+        if(restrict.equals("y")){
+        	user.restricted.addIngredient(user_input);
+        	
+            System.out.println("Your restricted ingredients are: ");
+            ArrayList<ingredient> userRestricted = user.restricted.getIngredients();      
+    		for (Iterator<ingredient> iter = userRestricted.listIterator(); iter.hasNext(); ) {		
+    		    ingredient a = iter.next();
+    		    System.out.println(a.getIngredient());
+    		}
+        }
+        else{
         user.userIngredients.addIngredient(user_input);
-        System.out.println("Your ingredients are: ");
-        ArrayList<ingredient> userIngredients = user.userIngredients.getIngredients();
         
+        System.out.println("Your ingredients are: ");
+        ArrayList<ingredient> userIngredients = user.userIngredients.getIngredients();      
 		for (Iterator<ingredient> iter = userIngredients.listIterator(); iter.hasNext(); ) {
 			
 		    ingredient a = iter.next();
 		    System.out.println(a.getIngredient());
 		}
+		
+
        
         }
+        }
      }
-        
-        
-        
- /*     
-        
-        ingredients ingredientList = new ingredients();
-        
-        // Make some ingredients to add
-        ingredient testIngredient = new ingredient();
-        ingredient otherItem = new ingredient();
-        
-        // name the ingredients
-        testIngredient.setIngredient("carrot");
-        otherItem.setIngredient("potato");
-        
-        // put them both into our list of ingredients
-        ingredientList.addIngredient(testIngredient);
-        ingredientList.addIngredient(otherItem);
-        
-        // get ingredients from our list of ingredients
-        ingredient carrot = ingredientList.getIngredients().get(0);
-        ingredient potato = ingredientList.getIngredients().get(1);
-        
-        // print the ingredients
-        System.out.println(carrot.getIngredient());
-        System.out.println(potato.getIngredient());
-        
-        ingredientList.removeIngredient(carrot);
-        
-        ingredient mysteryItem = ingredientList.getIngredients().get(0);
-        System.out.println(mysteryItem.getIngredient());
-        
-        ingredient finding = query.findIngredient("potato");
-        
-        System.out.println(finding.getIngredient());
-        
-  */      
+             
     }
 
 }
