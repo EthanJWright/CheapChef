@@ -6,6 +6,22 @@ public class controller {
     private static Scanner scanner;
 
 	public static void main(String[] args) {
+		
+	    System.out.println("here");
+		final CassandraInterface client = new CassandraInterface();
+	    System.out.println("here");
+//		client.connect();
+
+
+        ingredients cassandraIngredients = new ingredients();
+        cassandraIngredients = client.getIngredients();
+
+System.out.println(cassandraIngredients.findIngredient("beans").ingredient);
+client.close();
+		
+		
+/* Cassandra interface     -  - - - ---------------------------*/		
+		
         System.out.println("Hello World!"); // Display the string.
         Model user = new Model();
         
