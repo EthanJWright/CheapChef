@@ -39,10 +39,25 @@ public class CassandraInterface {
 			   ingredient tableResult = new ingredient();
 			   tableResult.setIngredient(row.getString("ingredient_name"));
 			   tableResult.setPrice(row.getInt("ingredient_price"));
-			   tableResult.setDietaryNeed(row.getBool("ingredient_restricted"));
+			   tableResult.setDietaryNeed(false);
+			   tableResult.setCategory(row.getString("category"));
 			   tableIngredients.addIngredient(tableResult);
 		   }
 		   return tableIngredients;
+	   }
+	   
+	   public ingredients getCategories(){
+		   ResultSet results = session.execute("SELECT * FROM categories");
+		   ingredients categoryIngredients = new ingredients();
+		   for (Row row: results){
+			   ingredient category = new ingredient();
+			   category.setIngredient(row.getString("ingredient_name"));
+			   category.setPrice(row.getInt("ingredient_price"));
+			   category.setCategory(row.getString("category"));
+			   category.setDietaryNeed(false);
+			   categoryIngredients.addIngredient(category);
+		   }
+		   return categoryIngredients;
 	   }
 	   
 	   /** Close cluster. */

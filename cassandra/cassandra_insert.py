@@ -21,7 +21,7 @@ for i in range(0, len(category)-1):
 
         session.execute(
                 """
-                INSERT INTO ingredients (ingredient, ingredient_name, ingredient_price, category)
+                INSERT INTO ingredients_sortable (ingredient, ingredient_name, ingredient_price, category)
                 VALUES (%s, %s, %s, %s)
                 """,
                 (index, ingredient_name, int(ingredient_price), ingredient_category)

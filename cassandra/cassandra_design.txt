@@ -11,7 +11,7 @@ CREATE TABLE recipes(
   recipe_price int,
   );
 
-CREATE TABLE ingredients(
+CREATE TABLE categories(
   ingredient int PRIMARY KEY,
   ingredient_name text,
   ingredient_price int,

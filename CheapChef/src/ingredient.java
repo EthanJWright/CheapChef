@@ -3,8 +3,15 @@ public class ingredient {
 	public int price;
 	public String ingredient;
 	public boolean DietaryNeed;
+	public String category;
 	
 	
+	public String getCategory() {
+		return category;
+	}
+	public void setCategory(String category) {
+		this.category = category;
+	}
 	public int getPrice() {
 		return price;
 	}

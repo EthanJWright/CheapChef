@@ -1,13 +1,23 @@
 dairy
   cheese = 3
   yogurt = 4
+  butter = 3
+  whey = 2
+  sour-cream = 3
+  ice-cream = 4
 
 alchohol
   wine = 8
+  beer = 6
+  vodka = 7
+  rum = 8
+  scotch = 7
 
 gluten
   bread = 2
   flour = 4
+  wheat = 3
+  couscous = 3
 
 vegetable
   garlic = 3
@@ -17,20 +27,36 @@ vegetable
   potato = 4
   broccoli = 4
   lettuce = 2
+  avocado = 4
+  carrot = 3
+  spinach = 3
+  cabbage = 2
+  kale = 3
+  peas = 2
+  kale = 3
+  asparagus = 4
+  cucumber = 2
+  eggplant = 3
+
 
 grain
   rice = 2
+  soy = 4
+  cereal = 2
+
 
 oils
-  oil = 7
-  butter = 3
+  canola-oil = 7
+  vegetable-oil = 6
+  coconut-oil = 4
+  sesame-oil = 7
+
 
 other
   sugar = 3
   broth = 2
   vinegar = 6
   egg = 4
-  soy = 2
   cumin = 1
 
 meat
@@ -38,7 +64,9 @@ meat
   tuna = 3
   chicken = 4
   ham = 3
-
+  pork = 5
+  lamb = 4
+  duck = 7
 
 fruit
   lemon = 3

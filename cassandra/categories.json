@@ -1,0 +1,27 @@
+{
+  "dairy": {
+    "dairy": "4"
+  },
+  "alchohol": {
+    "alchohol": "5"
+  },
+  "gluten": {
+    "gluten": "4"
+  },
+  "vegetable": {
+    "vegetable": "3"
+  },
+  "grain": {
+    "grain": "3"
+  },
+  "oils": {
+    "oil": "2"
+  },
+  "other": {
+    "other": "3"
+  },
+  "meat": {},
+  "fruit": {
+    "fruit": "2"
+  }
+}

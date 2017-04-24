@@ -6,43 +6,50 @@ public class controller {
     private static Scanner scanner;
 
 	public static void main(String[] args) {
+		Model database = new Model();
+		Model user = new Model();
 		
 	    System.out.println("here");
-		final CassandraInterface client = new CassandraInterface();
+	    final CassandraInterface client = new CassandraInterface();
 	    System.out.println("here");
-//		client.connect();
 
 
-        ingredients cassandraIngredients = new ingredients();
-        cassandraIngredients = client.getIngredients();
-
-System.out.println(cassandraIngredients.findIngredient("beans").ingredient);
-System.out.println(cassandraIngredients.findIngredient("beans").price);
+        database.databaseIngredients = client.getIngredients();
+        database.categories = client.getCategories();
+        
+        
+ 
+        
         client.close();
 		
 		
 /* Cassandra interface     -  - - - ---------------------------*/		
 		
-        System.out.println("Hello World!"); // Display the string.
-        Model user = new Model();
-        
-        
-
-        ingredient userIngredient = new ingredient();
-        userIngredient.setIngredient("carrot");
-        user.databaseIngredients.addIngredient(userIngredient);
-        
-        user.setDatabaseIngredients();
         while(true){
         System.out.println("Enter your item: ");
         scanner = new Scanner(System.in);
         String item = scanner.nextLine().toLowerCase();
         
         System.out.println("Is it an allergy?(Y/N): ");
+     
         scanner = new Scanner(System.in);
         String restrict = scanner.nextLine().toLowerCase();
         
-        ingredient user_input = user.query.findIngredient(item, user);
+        System.out.println("Select by category?(Y/N): ");
+        
+        scanner = new Scanner(System.in);
+        String choose_category = scanner.nextLine().toLowerCase();
+        ArrayList<ingredient> category_list = database.categories.getIngredients();
+        if(choose_category.equals("y")){
+        	for (Iterator<ingredient> iter = category_list.listIterator(); iter.hasNext();){
+        		ingredient a = iter.next();
+        		System.out.println(a.getCategory());
+        				
+        	}
+
+        }
+        
+        ingredient user_input = database.query.findIngredient(item, database);
 
         if(user_input == null){
         	System.out.println("Ingredient not in system");
