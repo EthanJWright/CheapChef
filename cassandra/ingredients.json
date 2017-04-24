@@ -1,27 +1,76 @@
 {
-  "cheese": "3",
-  "wine": "8",
-  "bread": "2",
-  "garlic": "3",
-  "mushrooms": "2",
-  "rice": "2",
-  "flour": "4",
-  "sugar": "3",
-  "broth": "2",
-  "tomato": "3",
-  "oil": "7",
-  "vinegar": "6",
-  "eggs": "4",
-  "beef": "7",
-  "onions": "3",
-  "yogurt": "4",
-  "potato": "4",
-  "beans": "1",
-  "lemon": "2",
-  "tuna": "3",
-  "broccoli": "4",
-  "lettuce": "2",
-  "butter": "3",
-  "soy": "2",
-  "cumin": "1"
+  "dairy": {
+    "cheese": "3",
+    "yogurt": "4",
+    "butter": "3",
+    "whey": "2",
+    "sour-cream": "3",
+    "ice-cream": "4"
+  },
+  "alchohol": {
+    "wine": "8",
+    "beer": "6",
+    "vodka": "7",
+    "rum": "8",
+    "scotch": "7"
+  },
+  "gluten": {
+    "bread": "2",
+    "flour": "4",
+    "wheat": "3",
+    "couscous": "3"
+  },
+  "vegetable": {
+    "garlic": "3",
+    "mushrooms": "2",
+    "tomato": "3",
+    "onion": "3",
+    "potato": "4",
+    "broccoli": "4",
+    "lettuce": "2",
+    "avocado": "4",
+    "carrot": "3",
+    "spinach": "3",
+    "cabbage": "2",
+    "kale": "3",
+    "peas": "2",
+    "asparagus": "4",
+    "cucumber": "2",
+    "eggplant": "3"
+  },
+  "grain": {
+    "rice": "2",
+    "soy": "4",
+    "cereal": "2"
+  },
+  "oils": {
+    "canola-oil": "7",
+    "vegetable-oil": "6",
+    "coconut-oil": "4",
+    "sesame-oil": "7"
+  },
+  "other": {
+    "sugar": "3",
+    "broth": "2",
+    "vinegar": "6",
+    "egg": "4",
+    "cumin": "1"
+  },
+  "meat": {
+    "beef": "7",
+    "tuna": "3",
+    "chicken": "4",
+    "ham": "3",
+    "pork": "5",
+    "lamb": "4",
+    "duck": "7"
+  },
+  "fruit": {
+    "lemon": "3",
+    "apple": "2",
+    "orange": "2",
+    "pineapple": "4",
+    "coconut": "3",
+    "mango": "4"
+  }
 }

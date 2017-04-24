@@ -10,3 +10,10 @@ CREATE TABLE recipes(
   recipe_name text,
   recipe_price int,
   );
+
+CREATE TABLE ingredients(
+  ingredient int PRIMARY KEY,
+  ingredient_name text,
+  ingredient_price int,
+  category text,
+  );
