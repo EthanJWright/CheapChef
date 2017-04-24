@@ -17,7 +17,8 @@ public class controller {
         cassandraIngredients = client.getIngredients();
 
 System.out.println(cassandraIngredients.findIngredient("beans").ingredient);
-client.close();
+System.out.println(cassandraIngredients.findIngredient("beans").price);
+        client.close();
 		
 		
 /* Cassandra interface     -  - - - ---------------------------*/		
@@ -73,7 +74,7 @@ client.close();
         }
         }
      }
-             
+       
     }
 
 }
