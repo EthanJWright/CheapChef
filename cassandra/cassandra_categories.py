@@ -10,7 +10,7 @@ session = cluster.connect('cheapchef')
 category = data.keys()
 print category[0]
 index = 0
-for i in range(0, len(category)-1):
+for i in range(0, len(category)):
     names = data[category[i]].keys()
     price = data[category[i]].values()
     print names

@@ -20,7 +20,9 @@
   "other": {
     "other": "3"
   },
-  "meat": {},
+  "meat": {
+    "meat" : "5"
+  },
   "fruit": {
     "fruit": "2"
   }
