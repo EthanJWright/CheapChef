@@ -20,11 +20,24 @@ public class View {
             	ingredient a = iter.next();
             	System.out.println(a.getCategory());  
             }
-            	
-        System.out.println("Enter a category: ");
+            
+        
+        //get category name to work with
+        System.out.println("Enter a category: "); 
         scanner = new Scanner(System.in);
         String category_name = scanner.nextLine().toLowerCase();
+        
+        // Set entire category as restricted?
+        System.out.println("Restricted category?(Y/N); ");
+        scanner = new Scanner(System.in);
+        String restricted_category = scanner.nextLine().toLowerCase();
         // get ready to list ingredients in specific category 
+        // if restricted, fill restricted list
+        if(restricted_category.equals("y")){
+        	System.out.println("setting category");
+        	user.userIngredients.setRestrictedCategory(category_name, database, user);
+        }
+        else{
         ArrayList<ingredient> ingredient_list = database.databaseIngredients.getIngredients();
         for(Iterator<ingredient> iterate = ingredient_list.listIterator(); iterate.hasNext();){
         	ingredient a_p = iterate.next();
@@ -33,9 +46,8 @@ public class View {
         		System.out.println(a_p.getIngredient());
         	}
         }
-            	
         
-      }
+
         // end of category based search
             	
         System.out.println("Enter your item: ");
@@ -57,27 +69,33 @@ public class View {
         if(restrict.equals("y")){
         	user.restricted.addIngredient(user_input);
         	
-            System.out.println("Your restricted ingredients are: ");
-            ArrayList<ingredient> userRestricted = user.restricted.getIngredients();      
-    		for (Iterator<ingredient> iter = userRestricted.listIterator(); iter.hasNext(); ) {		
-    		    ingredient a = iter.next();
-    		    System.out.println(a.getIngredient());
-    		}
+
         }
         else{
         user.userIngredients.addIngredient(user_input);
         
+}
+		
+        } 
+        
+      }
+       
+        }
+        System.out.println("Your restricted ingredients are: ");
+        ArrayList<ingredient> userRestricted = user.userIngredients.getRestricted();     
+		for (Iterator<ingredient> iter = userRestricted.listIterator(); iter.hasNext(); ) {		
+		    ingredient a = iter.next();
+		    System.out.println(a.getIngredient());
+		}
+		
         System.out.println("Your ingredients are: ");
         ArrayList<ingredient> userIngredients = user.userIngredients.getIngredients();      
 		for (Iterator<ingredient> iter = userIngredients.listIterator(); iter.hasNext(); ) {
 			
 		    ingredient a = iter.next();
 		    System.out.println(a.getIngredient());
-		}
 		
-
-       
-        }
+        
         }
      }
 		

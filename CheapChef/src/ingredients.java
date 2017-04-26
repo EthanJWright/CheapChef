@@ -48,6 +48,19 @@ public class ingredients {
 		return null;
 	}
 	
+	public void setRestrictedCategory(String category, Model database, Model user){
+		ArrayList<ingredient> list = database.databaseIngredients.getIngredients();
+		for(Iterator<ingredient> iter = list.listIterator(); iter.hasNext();){
+			ingredient a = iter.next();
+			if(a.category.equals(category)){
+				a.setDietaryNeed(true);
+				System.out.println(a.getIngredient());
+				restricted.add(a);
+			}
+		}
+	}
+	
+	
 	public ArrayList<ingredient> getIngredients() {
 		return ingredients;
 	}
