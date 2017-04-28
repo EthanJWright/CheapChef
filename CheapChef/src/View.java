@@ -46,10 +46,13 @@ public class View {
         		System.out.println(a_p.getIngredient());
         	}
         }
+    }
         
+ }         // end of category based search
 
-        // end of category based search
-            	
+
+        
+        
         System.out.println("Enter your item: ");
         scanner = new Scanner(System.in);
         String item = scanner.nextLine().toLowerCase();
@@ -67,10 +70,9 @@ public class View {
         }
         else{
         if(restrict.equals("y")){
-        	user.restricted.addIngredient(user_input);
-        	
-
+        	user.restricted.addIngredient(user_input);     	
         }
+        
         else{
         user.userIngredients.addIngredient(user_input);
         
@@ -78,9 +80,11 @@ public class View {
 		
         } 
         
-      }
+      
        
-        }
+ //       } // closing bracket for category search
+        
+        
         System.out.println("Your restricted ingredients are: ");
         ArrayList<ingredient> userRestricted = user.userIngredients.getRestricted();     
 		for (Iterator<ingredient> iter = userRestricted.listIterator(); iter.hasNext(); ) {		
