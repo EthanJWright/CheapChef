@@ -17,3 +17,14 @@ CREATE TABLE categories(
   ingredient_price int,
   category text,
   );
+
+
+// Set insertion semantics:
+UPDATE recipes SET ingredients = ingredients + 7 WHERE recipe_id = 'tacos';
+
+
+CREATE TABLE recipes (
+  recipe_id text PRIMARY KEY,
+  recipe_name text,
+  ingredients set<int>
+);
