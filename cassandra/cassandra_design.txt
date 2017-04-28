@@ -5,11 +5,6 @@
     ingredient_restricted boolean,
     );
 
-CREATE TABLE recipes(
-  recipe int PRIMARY KEY,
-  recipe_name text,
-  recipe_price int,
-  );
 
 CREATE TABLE categories(
   ingredient int PRIMARY KEY,
