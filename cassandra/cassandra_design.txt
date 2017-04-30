@@ -2,7 +2,7 @@
     ingredient int PRIMARY KEY,
     ingredient_name text,
     ingredient_price int,
-    ingredient_restricted boolean,
+    category text,
     );
 
 
