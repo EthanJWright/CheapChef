@@ -1,4 +1,7 @@
-   CREATE TABLE ingredients(
+CREATE KEYSPACE cheapchef
+  WITH REPLICATION = { 'class' : 'SimpleStrategy', 'replication_factor' : 3 };
+
+CREATE TABLE ingredients(
     ingredient int PRIMARY KEY,
     ingredient_name text,
     ingredient_price int,
