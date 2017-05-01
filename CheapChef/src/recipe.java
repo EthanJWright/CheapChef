@@ -3,7 +3,7 @@ public class recipe {
 	
 	
 	public String recipeName;
-	ingredients recipeIngredients = new ingredients();
+	ingredients recipeIngredientsKeys = new ingredients();
 	public String recipeURL;
 	
 	

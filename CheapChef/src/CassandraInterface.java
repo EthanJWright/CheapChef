@@ -59,7 +59,20 @@ public class CassandraInterface {
 		   }
 		   return categoryIngredients;
 	   }
-	   
+	   // incomplete - need to figure out what to do with setRecipeIngredients
+	   public recipes getRecipes(){
+		   ResultSet results = session.execute("SELECT * FROM recipes");
+		   recipes tableRecipes = new recipes();
+		   for (Row row: results){
+			   recipe tableResult = new recipe();
+			   tableResult.setRecipeName(row.getString("recipe_name"));
+			 //  tableResult.setRecipeIngredients(row.getInt("ingredient_price"));
+			   tableResult.setRecipeURL(row.getString("recipe_url"));
+			   tableRecipes.addRecipe(tableResult);
+		   }
+		   return tableRecipes;
+	   }
+	  
 	   /** Close cluster. */
 	   public void close()
 	   {

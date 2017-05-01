@@ -12,16 +12,11 @@ public class recipes {
 	public int totalPrice;
 	
 	// goal: add recipes to recommendRecipes 
-	public void addRecipe(recipe adding, Model database){
-		
-		ArrayList<recipe> list = database.databaseRecipes.getRecipes();
-		for (int i = 0; i < list.size(); i++) {
-		if (adding.recipeName == list.get(i).recipeName){
+	public void addRecipe(recipe adding){		
 			recipes.add(adding);
 		}
 		
-		}
-	}
+	
 	
 	// goal: finding recipes based off matching userIngredient.keys
 	// to database.ingredient.keys. Also checks for restricted ingredients
@@ -30,11 +25,12 @@ public class recipes {
 		ArrayList<recipe> list = database.databaseRecipes.getRecipes();
 		ArrayList<String> recipeList = new ArrayList<String>();
 
+		for (int i=0; i <= database.databaseRecipes)
 
 		for(Iterator<recipe> iter = list.listIterator(); iter.hasNext();) {
 			
 			for(Iterator<recipe> iter2 = list.listIterator(); iter2.hasNext();){ //gotta figure out a way to look into the ingredients of the database for the recipe
-				ingredient a = iter.next();
+				recipe a = iter.next();
 				recipe b = iter2.next();
 				if(a.ingredient.equals(b.recipeIngredients)){
 					recipeList.add(b.recipeName);
