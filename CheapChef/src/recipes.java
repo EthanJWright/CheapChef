@@ -1,14 +1,26 @@
-/**
+/*
 import java.util.ArrayList;
 import java.util.Iterator;
 
 public class recipes {
-	ArrayList<recipe> databaseRecipes = new ArrayList<recipe>();
-	ArrayList<recipe> userRecipes = new ArrayList<recipe>();
+
+
+	ArrayList<recipe> recipes = new ArrayList<recipe>();
+	ArrayList<recipe> recommendRecipes = new ArrayList<recipe>();
 	public int totalPrice;
 	
+	public void addRecipe(recipe adding, Model database){
+		
+		ArrayList<recipe> list = database.databaseRecipes.getRecipes();
+		for (int i = 0; i < list.size(); i++) {
+		if (adding.recipeName == list.get(i).recipeName){
+			recipes.add(adding);
+		}
+		
+		}
+	}
 	
-	public void findRecipe(ingredients userIngredients,Model user){
+	public void findRecipe(recipe recipe, Model database){
 		ArrayList<ingredient> list = user.userIngredients.getIngredients();
 		ArrayList<String> recipeList = new ArrayList<String>();
 
@@ -23,8 +35,29 @@ public class recipes {
 			}
 		}
 	}
+
+	public recipe findRecipe(String find) {
+		// TODO Auto-generated method stub
+		return null;
+	}
 	
+	
+	public ArrayList<recipe> getRecipes() {
+		return recipes;
+	}
 
+	public void setRecipes(ArrayList<recipe> recipes) {
+		this.recipes = recipes;
+	}
 
+	public ArrayList<recipe> getRecommendRecipes() {
+		return recommendRecipes;
+	}
+
+	public void setRecommendRecipes(ArrayList<recipe> recommendRecipes) {
+		this.recommendRecipes = recommendRecipes;
+	}
+	
 }
-**/
+
+*/

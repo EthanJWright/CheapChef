@@ -10,4 +10,9 @@ public class SearchTemplate {
 		ingredient match = user.databaseIngredients.findIngredient(find);	
 		return match;
 	}
+	
+	public recipe findRecipe(String find, Model user){
+		recipe match = user.databaseRecipes.findRecipe(find);
+		return match;
+	}
 }
