@@ -1,4 +1,6 @@
-/*
+
+// not complete 
+
 import java.util.ArrayList;
 import java.util.Iterator;
 
@@ -9,6 +11,7 @@ public class recipes {
 	ArrayList<recipe> recommendRecipes = new ArrayList<recipe>();
 	public int totalPrice;
 	
+	// goal: add recipes to recommendRecipes 
 	public void addRecipe(recipe adding, Model database){
 		
 		ArrayList<recipe> list = database.databaseRecipes.getRecipes();
@@ -20,13 +23,17 @@ public class recipes {
 		}
 	}
 	
+	// goal: finding recipes based off matching userIngredient.keys
+	// to database.ingredient.keys. Also checks for restricted ingredients
+	
 	public void findRecipe(recipe recipe, Model database){
-		ArrayList<ingredient> list = user.userIngredients.getIngredients();
+		ArrayList<recipe> list = database.databaseRecipes.getRecipes();
 		ArrayList<String> recipeList = new ArrayList<String>();
 
 
-		for(Iterator<ingredient> iter = list.listIterator(); iter.hasNext();) {
-			for(Iterator<recipe> iter2= databaseRecipes.listIterator(); iter2.hasNext();){ //gotta figure out a way to look into the ingredients of the database for the recipe
+		for(Iterator<recipe> iter = list.listIterator(); iter.hasNext();) {
+			
+			for(Iterator<recipe> iter2 = list.listIterator(); iter2.hasNext();){ //gotta figure out a way to look into the ingredients of the database for the recipe
 				ingredient a = iter.next();
 				recipe b = iter2.next();
 				if(a.ingredient.equals(b.recipeIngredients)){
@@ -60,4 +67,4 @@ public class recipes {
 	
 }
 
-*/
+
