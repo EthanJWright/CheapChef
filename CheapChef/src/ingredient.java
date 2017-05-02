@@ -4,6 +4,7 @@ public class ingredient {
 	public String ingredient;
 	public boolean DietaryNeed;
 	public String category;
+	public int key;
 	
 	
 	public String getCategory() {
@@ -30,6 +31,13 @@ public class ingredient {
 	public void setDietaryNeed(boolean match) {
 		this.DietaryNeed = match;
 	}
+	public int getKey() {
+		return key;
+	}
+	public void setKey(int key) {
+		this.key = key;
+	}
+	
 	
 
 }

@@ -45,6 +45,7 @@ public class CassandraInterface {
 			   tableResult.setPrice(row.getInt("ingredient_price"));
 			   tableResult.setDietaryNeed(false);
 			   tableResult.setCategory(row.getString("category"));
+			   tableResult.setKey(row.getInt("ingredient"));
 			   tableIngredients.addIngredient(tableResult);
 		   }
 		   return tableIngredients;
