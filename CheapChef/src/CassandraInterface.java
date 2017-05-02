@@ -73,7 +73,7 @@ public class CassandraInterface {
 			   tableResult.setRecipeName(row.getString("recipe_name"));
 			   tableResult.setRecipeIngredientKeys(row.getSet("ingredients", Integer.class));
 			   tableResult.setRecipeURL(row.getString("recipe_url"));
-			   tableRecipes.addRecipeDB(tableResult);
+			   tableRecipes.addRecipe(tableResult);
 		   }
 		   return tableRecipes;
 	   }

@@ -8,17 +8,15 @@ public class recipes {
 
 
 	ArrayList<recipe> recipes = new ArrayList<recipe>();
-	ArrayList<recipe> recommendRecipes = new ArrayList<recipe>();
+	//ArrayList<recipe> recommendRecipes = new ArrayList<recipe>();
 	public int totalPrice;
 	
 	// goal: add recipes to recommendRecipes 
 	
-	public void addRecipeDB(recipe adding){		
-		recipes.add(adding);
-	}
 	
-	public void addRecipe(recipe adding, Model user){		
-			user.recommendedRecipes.recipes.add(adding);
+	
+	public void addRecipe(recipe adding){		
+			recipes.add(adding);
 		}
 	
 	public void removeRecipe(recipe removing, Model user){
@@ -40,7 +38,7 @@ public class recipes {
 				recipe b = iterI.next();
 				for(Integer recipeKey : b.recipeIngredientKeys){
 					if(a.getKey() == recipeKey){
-						addRecipe(b,user);
+						addRecipe(b);
 					}
 				}
 			}
@@ -81,6 +79,7 @@ public class recipes {
 		this.recipes = recipes;
 	}
 
+	/*
 	public ArrayList<recipe> getRecommendRecipes() {
 		return recommendRecipes;
 	}
@@ -88,7 +87,7 @@ public class recipes {
 	public void setRecommendRecipes(ArrayList<recipe> recommendRecipes) {
 		this.recommendRecipes = recommendRecipes;
 	}
-	
+	*/
 }
 
 
