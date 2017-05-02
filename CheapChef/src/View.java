@@ -9,6 +9,7 @@ public class View {
 	
 	public void beginInteraction(){
         while(true){
+        Boolean keepSearching = true;
         System.out.println("Text(T) or Category(C) search?");
         scanner = new Scanner(System.in);
         String search_type = scanner.nextLine().toLowerCase();
@@ -34,6 +35,7 @@ public class View {
         // get ready to list ingredients in specific category 
         // if restricted, fill restricted list
         if(restricted_category.equals("y")){
+        	keepSearching = false;
         	System.out.println("setting category");
         	user.userIngredients.setRestrictedCategory(category_name, database, user);
         }
@@ -52,7 +54,7 @@ public class View {
 
 
         
-        
+        if(keepSearching.equals(true)){
         System.out.println("Enter your item: ");
         scanner = new Scanner(System.in);
         String item = scanner.nextLine().toLowerCase();
@@ -80,7 +82,7 @@ public class View {
 		
         } 
         
-      
+        }  
        
  //       } // closing bracket for category search
         
