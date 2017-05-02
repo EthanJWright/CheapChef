@@ -6,33 +6,43 @@ public class View {
 	Model user = new Model();
 	Model database = new Model();
     private static Scanner scanner;
-	
+
 	public void beginInteraction(){
         while(true){
+				/*
+				Make call to get recipe,
+				*/
+				System.out.println("Find Matching Recipes(R) or Search for Ingredients(I)?")
+				scanner = new Scanner(System.in);
+				String action = scanner.nextLine().toLowerCase();
+        if(action.equals("r")){
+					/* Put the call to your function here Julio */
+				}
+			  else{
         Boolean keepSearching = true;
         System.out.println("Text(T) or Category(C) search?");
         scanner = new Scanner(System.in);
         String search_type = scanner.nextLine().toLowerCase();
-        
+
         // If they chose to view categories
         ArrayList<ingredient> category_list = database.categories.getIngredients();
         if(search_type.equals("c")){
             for (Iterator<ingredient> iter = category_list.listIterator(); iter.hasNext();){
             	ingredient a = iter.next();
-            	System.out.println(a.getCategory());  
+            	System.out.println(a.getCategory());
             }
-            
-        
+
+
         //get category name to work with
         System.out.println("Enter a category: "); 
         scanner = new Scanner(System.in);
         String category_name = scanner.nextLine().toLowerCase();
-        
+
         // Set entire category as restricted?
         System.out.println("Restricted category?(Y/N); ");
         scanner = new Scanner(System.in);
         String restricted_category = scanner.nextLine().toLowerCase();
-        // get ready to list ingredients in specific category 
+        // get ready to list ingredients in specific category
         // if restricted, fill restricted list
         if(restricted_category.equals("y")){
         	keepSearching = false;
@@ -49,22 +59,22 @@ public class View {
         	}
         }
     }
-        
+
  }         // end of category based search
 
 
-        
+
         if(keepSearching.equals(true)){
         System.out.println("Enter your item: ");
         scanner = new Scanner(System.in);
         String item = scanner.nextLine().toLowerCase();
-        
+
         System.out.println("Is it an allergy?(Y/N): ");
-     
+
         scanner = new Scanner(System.in);
         String restrict = scanner.nextLine().toLowerCase();
-        
-        
+
+
         ingredient user_input = database.query.findIngredient(item, database);
 
         if(user_input == null){
@@ -73,40 +83,40 @@ public class View {
         else{
         if(restrict.equals("y")){
         	user.userIngredients.restricted.add(user_input);
-    	
+
         }
-        
+
         else{
         user.userIngredients.addIngredient(user_input);
-        
+
 }
-		
-        } 
-        
-        }  
-       
+
+        }
+
+        }
+
  //       } // closing bracket for category search
-        
-        
+
+
         System.out.println("Your restricted ingredients are: ");
-        ArrayList<ingredient> userRestricted = user.userIngredients.getRestricted();     
-		for (Iterator<ingredient> iter = userRestricted.listIterator(); iter.hasNext(); ) {		
+        ArrayList<ingredient> userRestricted = user.userIngredients.getRestricted();
+		for (Iterator<ingredient> iter = userRestricted.listIterator(); iter.hasNext(); ) {
 		    ingredient a = iter.next();
 		    System.out.println(a.getIngredient());
 		}
-		
+
         System.out.println("Your ingredients are: ");
-        ArrayList<ingredient> userIngredients = user.userIngredients.getIngredients();      
+        ArrayList<ingredient> userIngredients = user.userIngredients.getIngredients();
 		for (Iterator<ingredient> iter = userIngredients.listIterator(); iter.hasNext(); ) {
-			
+
 		    ingredient a = iter.next();
 		    System.out.println(a.getIngredient());
-		
-        
+
+
         }
      }
-		
-		
+
+	 }
 	}
 
 }
