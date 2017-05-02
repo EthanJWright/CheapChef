@@ -12,8 +12,6 @@ public class recipe {
 	public int recipePrice;
 	
 	
-
-	
 	public String getRecipeName() {
 		return recipeName;
 	}

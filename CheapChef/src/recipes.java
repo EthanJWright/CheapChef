@@ -24,7 +24,7 @@ public class recipes {
 	public void findRecipe(recipe recipe, Model database){
 		ArrayList<recipe> list = database.databaseRecipes.getRecipes();
 		ArrayList<String> recipeList = new ArrayList<String>();
-
+/*
 		for (int i=0; i <= database.databaseRecipes)
 
 		for(Iterator<recipe> iter = list.listIterator(); iter.hasNext();) {
@@ -37,8 +37,8 @@ public class recipes {
 				}
 			}
 		}
+*/
 	}
-
 	public recipe findRecipe(String find) {
 		// TODO Auto-generated method stub
 		return null;
