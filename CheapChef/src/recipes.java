@@ -19,9 +19,6 @@ public class recipes {
 			recipes.add(adding);
 		}
 	
-	public void removeRecipe(recipe removing){
-			recipes.remove(removing);
-	}
 		
 	
 	
@@ -51,7 +48,8 @@ public class recipes {
 			for(Iterator<ingredient> userIter = userList.listIterator(); userIter.hasNext();){
 				ingredient b = userIter.next();
 				if(a.containsIngredient(b)){
-					user.recommendedRecipes.removeRecipe(a);
+					iter.remove();
+					break;
 				}
 			}
 		}
