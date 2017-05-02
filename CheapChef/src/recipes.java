@@ -19,8 +19,8 @@ public class recipes {
 			recipes.add(adding);
 		}
 	
-	public void removeRecipe(recipe removing, Model user){
-			user.recommendedRecipes.recipes.remove(removing);
+	public void removeRecipe(recipe removing){
+			recipes.remove(removing);
 	}
 		
 	
@@ -28,47 +28,36 @@ public class recipes {
 	// goal: finding recipes based off matching userIngredient.keys
 	// to database.ingredient.keys. Also checks for restricted ingredients
 	
-	public void findRecipe(Model database, Model user){
-		ArrayList<recipe> list = database.databaseRecipes.getRecipes();
-		ArrayList<ingredient> userIngredients = user.userIngredients.getIngredients();
-		
-		for(Iterator<ingredient> iter= userIngredients.iterator(); iter.hasNext();){
-			for(Iterator<recipe> iterI = list.listIterator(); iterI.hasNext();){
-				ingredient a = iter.next();
-				recipe b = iterI.next();
-				for(Integer recipeKey : b.recipeIngredientKeys){
-					if(a.getKey() == recipeKey){
-						addRecipe(b);
-					}
+	public void findRecipe(Model user){
+		ArrayList<recipe> list = recipes;
+		for(Iterator<recipe> iter = list.listIterator(); iter.hasNext();){
+			recipe a = iter.next();
+			ArrayList<ingredient> userList = user.userIngredients.getIngredients();
+			for(Iterator<ingredient> userIter = userList.listIterator(); userIter.hasNext();){
+				ingredient b = userIter.next();
+				if(a.containsIngredient(b)){
+					user.recommendedRecipes.addRecipe(a);
 				}
 			}
 		}
 
 	}
 	
-	public void removeRestrictedRecipe(recipe removing, Model user){
+	public void removeRestrictedRecipe(Model user){
 		ArrayList<recipe> list = user.recommendedRecipes.getRecipes();
-		ArrayList<ingredient> restrictedIngredients = user.restricted.getRestricted();
-		
-		for(Iterator<ingredient> iter = restrictedIngredients.listIterator(); iter.hasNext();){
-			for(Iterator<recipe> iterI = list.listIterator(); iterI.hasNext();){
-				ingredient a = iter.next();
-				recipe b = iterI.next();
-				for(Integer recipeKey : b.recipeIngredientKeys){
-					if(a.getKey() == recipeKey){
-						removeRecipe(b,user);
-					}
+		for(Iterator<recipe> iter = list.listIterator(); iter.hasNext();){
+			recipe a = iter.next();
+			ArrayList<ingredient> userList = user.userIngredients.getRestricted();
+			for(Iterator<ingredient> userIter = userList.listIterator(); userIter.hasNext();){
+				ingredient b = userIter.next();
+				if(a.containsIngredient(b)){
+					user.recommendedRecipes.removeRecipe(a);
 				}
 			}
 		}
-		
-		
+
 	}
-	
-	public recipe findRecipe(String find) {
-		// TODO Auto-generated method stub
-		return null;
-	}
+
 	
 	
 	public ArrayList<recipe> getRecipes() {

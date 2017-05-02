@@ -1,5 +1,6 @@
 import java.util.ArrayList;
 import java.util.HashSet;
+import java.util.Iterator;
 import java.util.Set;
 
 public class recipe {
@@ -11,7 +12,17 @@ public class recipe {
 	public String recipeURL;
 	public int recipePrice;
 	
-	
+	public Boolean containsIngredient(ingredient ingredient){
+			for (Integer recipeKey : recipeIngredientKeys){
+				if(recipeKey == ingredient.getKey()){
+					return true;
+				}
+			}
+			return false;
+		}
+			
+		
+
 	public String getRecipeName() {
 		return recipeName;
 	}
