@@ -21,6 +21,7 @@ public class View {
                 		user.recommendedRecipes.removeRestrictedRecipe(user);
         			}
         			recipeView(recipe_list);
+        			recipe_list.clear();
         		}
         		
         		else if(user.userIngredients.getIngredients().isEmpty()){
