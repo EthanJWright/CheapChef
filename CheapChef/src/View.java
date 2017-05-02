@@ -72,7 +72,8 @@ public class View {
         }
         else{
         if(restrict.equals("y")){
-        	user.restricted.addIngredient(user_input);     	
+        	user.userIngredients.restricted.add(user_input);
+    	
         }
         
         else{
