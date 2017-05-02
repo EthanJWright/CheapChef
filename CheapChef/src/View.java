@@ -9,15 +9,25 @@ public class View {
 
 	public void beginInteraction(){
         while(true){
-				/*
-				Make call to get recipe,
-				*/
-				System.out.println("Find Matching Recipes(R) or Search for Ingredients(I)?")
+        		ArrayList<recipe> recipe_list = user.recommendedRecipes.getRecipes();
+				System.out.println("Find Matching Recipes(R) or Search for Ingredients(I)?");
 				scanner = new Scanner(System.in);
 				String action = scanner.nextLine().toLowerCase();
         if(action.equals("r")){
-					/* Put the call to your function here Julio */
-				}
+					
+        		if (!user.userIngredients.getIngredients().isEmpty()){
+        			database.databaseRecipes.findRecipe(user);
+        			if(!user.userIngredients.getRestricted().isEmpty()){
+                		user.recommendedRecipes.removeRestrictedRecipe(user);
+                		recipeView(recipe_list);
+        			}
+        			recipeView(recipe_list);
+        		}
+        		
+        		else if(user.userIngredients.getIngredients().isEmpty()){
+        			System.out.println("You haven't added any ingredients!");
+        		}
+			}
 			  else{
         Boolean keepSearching = true;
         System.out.println("Text(T) or Category(C) search?");
@@ -118,5 +128,14 @@ public class View {
 
 	 }
 	}
+	
+	public void recipeView(ArrayList<recipe> list){
+		for (Iterator<recipe> iter = list.listIterator(); iter.hasNext();){
+	    	recipe a = iter.next();
+	    	System.out.println(a.getRecipeName());
+		}
+		}
 
 }
+
+	
