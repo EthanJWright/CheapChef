@@ -19,7 +19,6 @@ public class View {
         			database.databaseRecipes.findRecipe(user);
         			if(!user.userIngredients.getRestricted().isEmpty()){
                 		user.recommendedRecipes.removeRestrictedRecipe(user);
-                		recipeView(recipe_list);
         			}
         			recipeView(recipe_list);
         		}
