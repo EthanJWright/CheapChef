@@ -9,6 +9,7 @@ public class Model {
 	recipes recommendedRecipes = new recipes();
 	
 	
+	
 	public ingredients getCategories() {
 		return categories;
 	}
