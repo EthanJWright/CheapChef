@@ -12,6 +12,11 @@ public class recipes {
 	public int totalPrice;
 	
 	// goal: add recipes to recommendRecipes 
+	
+	public void addRecipeDB(recipe adding){		
+		recipes.add(adding);
+	}
+	
 	public void addRecipe(recipe adding, Model user){		
 			user.recommendedRecipes.recipes.add(adding);
 		}

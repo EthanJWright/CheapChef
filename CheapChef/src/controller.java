@@ -12,7 +12,8 @@ public class controller {
 
         database.databaseIngredients = client.getIngredients();
         database.categories = client.getCategories();
-        
+        database.databaseRecipes = client.getRecipes();
+        System.out.println(database.databaseRecipes.getRecipes().get(0).getRecipeName());
         
  
         
