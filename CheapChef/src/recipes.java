@@ -12,8 +12,8 @@ public class recipes {
 	public int totalPrice;
 	
 	// goal: add recipes to recommendRecipes 
-	public void addRecipe(recipe adding){		
-			recipes.add(adding);
+	public void addRecipe(recipe adding, Model user){		
+			user.recommendedRecipes.recipes.add(adding);
 		}
 		
 	
@@ -21,7 +21,7 @@ public class recipes {
 	// goal: finding recipes based off matching userIngredient.keys
 	// to database.ingredient.keys. Also checks for restricted ingredients
 	
-	public void findRecipe(recipe recipe, Model database, Model user){
+	public void findRecipe(Model database, Model user){
 		ArrayList<recipe> list = database.databaseRecipes.getRecipes();
 		ArrayList<recipe> recipeList = new ArrayList<recipe>();
 		ArrayList<ingredient> userIngredients = user.userIngredients.getIngredients();
@@ -32,11 +32,16 @@ public class recipes {
 				recipe b = iterI.next();
 				for(Integer recipeKey : b.recipeIngredientKeys){
 					if(a.getKey() == recipeKey){
-						addRecipe(b);
+						addRecipe(b,user);
 					}
 				}
 			}
 		}
+		
+			
+		
+			
+		
 		
 		
 /*
@@ -53,6 +58,11 @@ public class recipes {
 			}
 		}
 */
+	}
+	
+	public void removeRestrictedRecipe(recipe removing, Model user){
+		ArrayList<recipe> list = recommendedRecipe;
+		
 	}
 	public recipe findRecipe(String find) {
 		// TODO Auto-generated method stub
