@@ -28,8 +28,8 @@ public class recipes {
 	// goal: finding recipes based off matching userIngredient.keys
 	// to database.ingredient.keys. Also checks for restricted ingredients
 	
-	public void findRecipe(Model database, Model user){
-		ArrayList<recipe> list = database.databaseRecipes.getRecipes();
+	public void findRecipe(Model user){
+		ArrayList<recipe> list = recipes;
 		ArrayList<ingredient> userIngredients = user.userIngredients.getIngredients();
 		
 		for(Iterator<ingredient> iter= userIngredients.iterator(); iter.hasNext();){
