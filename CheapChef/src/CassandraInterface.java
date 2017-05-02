@@ -1,7 +1,11 @@
+import java.util.HashSet;
+import java.util.Set;
+
 import com.datastax.driver.core.Cluster;
 import com.datastax.driver.core.ResultSet;
 import com.datastax.driver.core.Row;
 import com.datastax.driver.core.Session;
+import com.google.common.reflect.TypeToken;
 
 
 
@@ -41,6 +45,7 @@ public class CassandraInterface {
 			   tableResult.setPrice(row.getInt("ingredient_price"));
 			   tableResult.setDietaryNeed(false);
 			   tableResult.setCategory(row.getString("category"));
+			   tableResult.setKey(row.getInt("ingredient"));
 			   tableIngredients.addIngredient(tableResult);
 		   }
 		   return tableIngredients;
@@ -66,7 +71,7 @@ public class CassandraInterface {
 		   for (Row row: results){
 			   recipe tableResult = new recipe();
 			   tableResult.setRecipeName(row.getString("recipe_name"));
-			   // tableResult.setRecipeIngredientKeys(row.getset());
+			   tableResult.setRecipeIngredientKeys(row.getSet("ingredients", Integer.class));
 			   tableResult.setRecipeURL(row.getString("recipe_url"));
 			   tableRecipes.addRecipe(tableResult);
 		   }
