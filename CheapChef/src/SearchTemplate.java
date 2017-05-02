@@ -11,8 +11,10 @@ public class SearchTemplate {
 		return match;
 	}
 	
+	/*
 	public recipe findRecipe(String find, Model user){
 		recipe match = user.databaseRecipes.findRecipe(find);
 		return match;
 	}
+	*/
 }
