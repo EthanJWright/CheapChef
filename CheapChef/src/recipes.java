@@ -21,9 +21,24 @@ public class recipes {
 	// goal: finding recipes based off matching userIngredient.keys
 	// to database.ingredient.keys. Also checks for restricted ingredients
 	
-	public void findRecipe(recipe recipe, Model database){
+	public void findRecipe(recipe recipe, Model database, Model user){
 		ArrayList<recipe> list = database.databaseRecipes.getRecipes();
-		ArrayList<String> recipeList = new ArrayList<String>();
+		ArrayList<recipe> recipeList = new ArrayList<recipe>();
+		ArrayList<ingredient> userIngredients = user.userIngredients.getIngredients();
+		
+		for(Iterator<ingredient> iter= userIngredients.iterator(); iter.hasNext();){
+			for(Iterator<recipe> iterI = list.listIterator(); iterI.hasNext();){
+				ingredient a = iter.next();
+				recipe b = iterI.next();
+				for(Integer recipeKey : b.recipeIngredientKeys){
+					if(a.getKey() == recipeKey){
+						addRecipe(b);
+					}
+				}
+			}
+		}
+		
+		
 /*
 		for (int i=0; i <= database.databaseRecipes)
 
