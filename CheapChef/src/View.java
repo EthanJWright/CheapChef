@@ -132,7 +132,7 @@ public class View {
 	public void recipeView(ArrayList<recipe> list){
 		for (Iterator<recipe> iter = list.listIterator(); iter.hasNext();){
 	    	recipe a = iter.next();
-	    	System.out.println(a.getRecipeName());
+	    	System.out.println(a.getRecipeName() + " " + a.getRecipeURL());
 		}
 		}
 
